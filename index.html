@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css" />
+    <title>じゃんけん</title>
+  </head>
+  <body>
+    <header>
+      <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+      <ul>
+        <li id="gu_btn">グー</li>
+        <li id="cho_btn">チョキ</li>
+        <li id="par_btn">パー</li>
+      </ul>
+      <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+      <div class="pc-hands-image"></div>
+      <div id="judgment">勝ち</div>
+      <!-- ジャッジメント画像 -->
+      <div class="image"></div>
+    </main>
+    <footer></footer>
+    <script>
+      //じゃんけん用のSCRIPTを書いてください
+
+      // 1：グー 2：チョキ 3：パーとする
+      // 自分の出した手をmyHandに格納する
+      // グーボタンを選択した時の処理
+
+      //判定関数
+      function judgement(index, randomNum) {
+        //判定式
+        let num = (index + 1 - randomNum + 3) % 3;
+        if (num == 0) {
+          $("#judgment").html("あいこ");
+        } else if (num == 2) {
+          $("#judgment").html("勝ち");
+        } else {
+          $("#judgment").html("負け");
+        }
+      }
+
+      //ボタン押した時のアクション
+      $("li").on("click", function () {
+        let randomNum = Math.ceil(Math.random() * 3);
+        // クリックした要素のindexを取得
+        let index = $("li").index(this);
+        // なに？を書き換え
+        if (randomNum == 1) {
+          //1はグーの時
+          $("#pc_hands").html("グー");
+          $(".pc-hands-image").html('<img src="./img/gu.png" alt="">');
+        } else if (randomNum == 2) {
+          //2はチョキの時
+          $("#pc_hands").html("チョキ");
+          $(".pc-hands-image").html('<img src="./img/choki.jpeg" alt="">');
+        } else {
+          //3はパーの時
+          $("#pc_hands").html("パー");
+          $(".pc-hands-image").html('<img src="./img/par.jpg" alt="">');
+        }
+        judgement(index, randomNum);
+      });
+    </script>
+  </body>
+</html>

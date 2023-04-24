@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 32px;
+}
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+main {
+  border-bottom: 1px solid #ccc;
+}
+footer {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+p {
+  font-size: 200%;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  height: 200px;
+}
+ul {
+  padding: 0;
+  border-top: 1px solid #000000;
+  display: table; /* 定義 */
+  table-layout: fixed;
+  width: 100%;
+}
+li {
+  text-align: center;
+  list-style-type: none;
+  border: 1px solid #666;
+  background-color: #fff;
+  display: table-cell; /* 定義 */
+  cursor: pointer;
+}
+li:hover {
+  background: #0066cc;
+  color: #fff;
+}
+
+.image__area {
+  display: flex;
+  justify-content: center;
+}
+
+.pc-hands-image {
+  max-width: 350px;
+  height: 250px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  overflow: hidden;
+}
